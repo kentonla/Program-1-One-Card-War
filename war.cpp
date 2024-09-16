@@ -23,12 +23,40 @@ int main() {
     cin >> player1;
     cout << "Please enter Player 2's name: ";
     cin >> player2;
+    cout << endl << "Unshuffled deck:" << endl;
     myDeck.print();       //Display unshuffeled deck
     myDeck.shuffle();     //Shuffle the deck
+    cout << "Shuffeled deck:" << endl;
     myDeck.print();       //Display shuffled deck
     
-    //Play 26 games
-    //Anounce the winner (or tie) of EACH game
-    //After 26 games are played, print the statistics
+    //stat tracker
+    int p1_wins = 0;
+    int p2_wins = 0;
+    int ties = 0;
 
+    //Play 26 games
+    for (int i = 0; i < 26; i++){
+        Card p1_card = myDeck.deal();
+        Card p2_card = myDeck.deal();
+        int result = p1_card.compare(p2_card);
+        //Anounce the winner (or tie) of EACH game
+        if (result == 1) {
+            cout << player1 << " wins this round!" << endl;
+            p1_wins++;
+        } else if (result == -1) {
+            cout << player2 << " wins this round!" << endl;
+            p2_wins++;
+        } else {
+            cout << "This round is a tie!" << endl;
+            ties++;
+        }
+    }
+
+    //After 26 games are played, print the statistics
+    cout << endl << "The game has ended!" << endl;
+    cout << player1 << " won " << p1_wins << " rounds." << endl;
+    cout << player2 << " won " << p2_wins << " rounds." << endl;
+    cout << "There were " << ties << " ties." << endl;
+
+    return 0;
 }
