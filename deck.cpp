@@ -95,5 +95,11 @@ void Deck::print(){
 
 //Shuffles the cards in the deck
 void Deck::shuffle(){
-    
+    srand(time(0));
+    for (int i = 0; i < topCard; i++){
+        int random = rand()%topCard;
+        Card temp = pile[i];
+        pile[i] = pile[random];
+        pile[random] = temp;
+    }
 }

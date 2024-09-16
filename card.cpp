@@ -72,6 +72,8 @@ void Card::print(){
 }
 
 // return 1 for win, 0 for tie, -1 for lose
-int Card::compare(Card){
+int Card::compare(Card other){
+    if (rank > other.rank) return 1;
+    if (rank < other.rank) return -1;
     return 0;
 }
