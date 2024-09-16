@@ -36,18 +36,31 @@ int main() {
 
     //Play 26 games
     for (int i = 0; i < 26; i++){
+        cout << "Round " << i + 1 << ":\t";
         Card p1_card = myDeck.deal();
         Card p2_card = myDeck.deal();
         int result = p1_card.compare(p2_card);
         //Anounce the winner (or tie) of EACH game
         if (result == 1) {
-            cout << player1 << " wins this round!" << endl;
+            cout << player1 << " draws a ";
+            p1_card.print();
+            cout << " | " << player2 << " draws a ";
+            p2_card.print();
+            cout << "\t|\t" << player1 << " wins this round!" << endl;
             p1_wins++;
         } else if (result == -1) {
-            cout << player2 << " wins this round!" << endl;
+            cout << player1 << " draws a ";
+            p1_card.print();
+            cout << " | " << player2 << " draws a ";
+            p2_card.print();
+            cout << "\t|\t" << player2 << " wins this round!" << endl;
             p2_wins++;
         } else {
-            cout << "This round is a tie!" << endl;
+            cout << player1 << " draws a ";
+            p1_card.print();
+            cout << " | " << player2 << " draws a ";
+            p2_card.print();
+            cout << "\t|\t" << "This round is a tie!" << endl;
             ties++;
         }
     }
