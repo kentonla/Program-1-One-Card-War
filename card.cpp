@@ -9,20 +9,19 @@ class Card{
         char suit;
 
     public:
+        // default Card needed for array
+        Card::Card(){
+        }
+
         // constructor to create a card, setting the suit and rank
-        Card(char r, char s){
+        Card::Card(char r, char s){
             rank = r;
             suit = s;
         }
 
-        // default Card needed for array
-        Card(){
-
-        }
-
         // display the card example: AC, 10S, KD
-        void print(){
-            switch(rank){
+        void Card::print(){
+            switch (rank) {
                 case 'A':
                     cout << 'A';
                     break;
@@ -63,7 +62,7 @@ class Card{
                     cout << 'K';
                     break;
             }
-            switch(suit){
+            switch (suit) {
                 case 'H':
                     cout << 'H';
                     break;
@@ -80,7 +79,7 @@ class Card{
         }
 
         // return 1 for win, 0 for tie, -1 for lose
-        int compare(Card){
+        int Card::compare(Card){
 
         }
-}
+};
