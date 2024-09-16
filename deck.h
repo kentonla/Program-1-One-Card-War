@@ -2,6 +2,7 @@
 #define DECK_H
 #include <iostream>
 #include <string>
+#include "card.h"
 using namespace std;
 
 class Deck{
@@ -11,11 +12,8 @@ class Deck{
     
     public:
         Deck();
-
         Card deal();
-
         void print();
-
         void shuffle();
 };
 
