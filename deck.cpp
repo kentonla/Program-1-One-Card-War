@@ -13,12 +13,12 @@ class Deck{
     
     public:
         // Deck constructor. Creates a deck of 52 cards
-        Deck(){
+        Deck::Deck(){
             int index = -1;
             char rank;
             char suit;
             for(int s = 0; s < 4; s++){
-                switch(s){
+                switch (s) {
                     case 0:
                         suit = 'H';
                         break;
@@ -33,7 +33,7 @@ class Deck{
                         break;
                 }
                 for(int r = 0; r < 13; r++){
-                    switch(r){
+                    switch (r) {
                         case 0:
                             rank = 'A';
                             break;
@@ -81,12 +81,12 @@ class Deck{
         }
 
         // Deals a card by taking a card from the deck
-        Card deal(){
+        Card Deck::deal(){
             return pile[--topCard];
         }
 
         //Shows all the cards in the deck
-        void print(){
+        void Deck::print(){
             for (int i = 0; i < topCard; i++){
                 if (i%13 == 0){
                     cout << "\n";
@@ -100,7 +100,7 @@ class Deck{
         }
 
         //Shuffles the cards in the deck
-        void shuffle(){
-
+        void Deck::shuffle(){
+            
         }
-}
+};

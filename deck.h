@@ -17,6 +17,6 @@ class Deck{
         void print();
 
         void shuffle();
-}
+};
 
 #endif

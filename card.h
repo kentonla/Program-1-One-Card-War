@@ -9,15 +9,15 @@ class Card{
     private:
         char rank;
         char suit;
-        
-    public:
-        Card(char suit, char rank);
 
+    public:
         Card();
+
+        Card(char rank, char suit);
 
         void print();
 
         int compare(Card);
-}
+};
 
 #endif

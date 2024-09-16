@@ -21,8 +21,8 @@ int main() {
     cout << "Please enter Player 2's name: ";
     cin >> player2;
     myDeck.print();       //Display unshuffeled deck
-    myDeck.shuffle();     //Shuffle the deck
-    myDeck.print();       //Display shuffled deck
+    //myDeck.shuffle();     //Shuffle the deck
+    //myDeck.print();       //Display shuffled deck
     
     //Play 26 games
     //Anounce the winner (or tie) of EACH game
