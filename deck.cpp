@@ -11,6 +11,7 @@ Deck::Deck(){
     int index = -1;
     char rank;
     char suit;
+    topCard = 52;
     for(int s = 0; s < 4; s++){
         switch (s) {
             case 0:
@@ -82,22 +83,19 @@ Card Deck::deal(){
 //Shows all the cards in the deck
 void Deck::print(){
     for (int i = 0; i < topCard; i++){
-        if (i%13 == 0){
+        if (i%13 == 0 && i != 0){
             cout << "\n";
-            pile[i].print();
-            cout << " ";
-        } else{
-            pile[i].print();
-            cout << " ";
         }
+        pile[i].print();
+        cout << " ";
     }
+    cout << endl << endl;
 }
 
 //Shuffles the cards in the deck
 void Deck::shuffle(){
-    srand(time(0));
     for (int i = 0; i < topCard; i++){
-        int random = rand()%topCard;
+        int random = rand() % topCard;
         Card temp = pile[i];
         pile[i] = pile[random];
         pile[random] = temp;
