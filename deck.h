@@ -2,16 +2,21 @@
 #define DECK_H
 #include <iostream>
 #include <string>
+using namespace std;
 
 class Deck{
+    private:
+        Card pile[52];
+        int topCard;
     
-    Deck();
+    public:
+        Deck();
 
-    Card deal();
+        Card deal();
 
-    void print();
+        void print();
 
-    void shuffle();
+        void shuffle();
 }
 
 #endif

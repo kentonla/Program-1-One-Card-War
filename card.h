@@ -2,16 +2,22 @@
 #define CARD_H
 #include <iostream>
 #include <string>
+using namespace std;
 
 
 class Card{
-    Card(char suit, char rank);
+    private:
+        char rank;
+        char suit;
+        
+    public:
+        Card(char suit, char rank);
 
-    Card();
+        Card();
 
-    void print();
+        void print();
 
-    int compare(Card);
+        int compare(Card);
 }
 
 #endif

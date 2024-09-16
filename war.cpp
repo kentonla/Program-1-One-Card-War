@@ -13,16 +13,19 @@
 using namespace std;
 
 int main() {
-    Deck Deck;
+    Deck myDeck;  // creates new deck
     string player1;
     string player2;
     cout << "Please enter Player 1's name: ";
     cin >> player1;
     cout << "Please enter Player 2's name: ";
     cin >> player2;
-    Deck.print();
-    Deck.shuffle();
-    Deck.print();
+    myDeck.print();       //Display unshuffeled deck
+    myDeck.shuffle();     //Shuffle the deck
+    myDeck.print();       //Display shuffled deck
     
+    //Play 26 games
+    //Anounce the winner (or tie) of EACH game
+    //After 26 games are played, print the statistics
 
 }
