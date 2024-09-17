@@ -71,47 +71,6 @@ void Card::print(){
     }
 }
 
-// return 1 for win, 0 for tie, -1 for lose
-// int Card::compare(Card other){
-//     int thisRankValue;
-//     int otherRankValue;
-//     switch (rank) {
-//         case 'K': thisRankValue = 13; break;
-//         case 'Q': thisRankValue = 12; break;
-//         case 'J': thisRankValue = 11; break;
-//         case 'T': thisRankValue = 10; break;
-//         case '9': thisRankValue = 9; break;
-//         case '8': thisRankValue = 8; break;
-//         case '7': thisRankValue = 7; break;
-//         case '6': thisRankValue = 6; break;
-//         case '5': thisRankValue = 5; break;
-//         case '4': thisRankValue = 4; break;
-//         case '3': thisRankValue = 3; break;
-//         case '2': thisRankValue = 2; break;
-//         case 'A': thisRankValue = 1; break;
-//     }
-
-//     switch (other.rank) {
-//         case 'K': otherRankValue = 13; break;
-//         case 'Q': otherRankValue = 12; break;
-//         case 'J': otherRankValue = 11; break;
-//         case 'T': otherRankValue = 10; break;
-//         case '9': otherRankValue = 9; break;
-//         case '8': otherRankValue = 8; break;
-//         case '7': otherRankValue = 7; break;
-//         case '6': otherRankValue = 6; break;
-//         case '5': otherRankValue = 5; break;
-//         case '4': otherRankValue = 4; break;
-//         case '3': otherRankValue = 3; break;
-//         case '2': otherRankValue = 2; break;
-//         case 'A': otherRankValue = 1; break;
-//     }
-
-//     if (thisRankValue > otherRankValue) return 1;
-//     if (thisRankValue < otherRankValue) return -1;
-//     return 0;
-// }
-
 int Card::compare(Card other){
     char ranks[] = {'A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K'};        //creates an array of ranks in order
     char p1 = rank;
@@ -126,6 +85,7 @@ int Card::compare(Card other){
             p2_index = i;
         }
     }
+    // return 1 for win, 0 for tie, -1 for lose
     if (p1_index > p2_index) return 1;
     if (p1_index < p2_index) return -1;
     return 0;
