@@ -23,10 +23,10 @@ int main() {
     cin >> player1;
     cout << "Please enter Player 2's name: ";
     cin >> player2;
-    cout << endl << "Unshuffled deck:" << endl;
+    cout << endl << "Original Deck" << endl;
     myDeck.print();       //Display unshuffeled deck
     myDeck.shuffle();     //Shuffle the deck
-    cout << "Shuffeled deck:" << endl;
+    cout << "Shuffled Deck" << endl;
     myDeck.print();       //Display shuffled deck
     
     //stat tracker
@@ -36,39 +36,39 @@ int main() {
 
     //Play 26 games
     for (int i = 0; i < 26; i++){
-        cout << "Round " << i + 1 << ":\t";
+        cout << "Game " << i + 1 << endl << "--------" << endl;
         Card p1_card = myDeck.deal();
         Card p2_card = myDeck.deal();
         int result = p1_card.compare(p2_card);
         //Anounce the winner (or tie) of EACH game
         if (result == 1) {
-            cout << player1 << " draws a ";
+            cout << "\t" << player1 << "=>";
             p1_card.print();
-            cout << " | " << player2 << " draws a ";
+            cout << endl << "\t" << player2 << "=>";
             p2_card.print();
-            cout << "\t|\t" << player1 << " wins this round!" << endl;
+            cout << endl << player1 << "=> Winner" << endl << endl;
             p1_wins++;
         } else if (result == -1) {
-            cout << player1 << " draws a ";
+            cout << "\t" << player1 << "=>";
             p1_card.print();
-            cout << " | " << player2 << " draws a ";
+            cout << endl << "\t" << player2 << "=>";
             p2_card.print();
-            cout << "\t|\t" << player2 << " wins this round!" << endl;
+            cout << endl << player2 << "=> Winner" << endl << endl;
             p2_wins++;
         } else {
-            cout << player1 << " draws a ";
+            cout << "\t" << player1 << "=>";
             p1_card.print();
-            cout << " | " << player2 << " draws a ";
+            cout << endl << "\t" << player2 << "=>";
             p2_card.print();
-            cout << "\t|\t" << "This round is a tie!" << endl;
+            cout << endl << "Tie game" << endl << endl;
             ties++;
         }
     }
 
     //After 26 games are played, print the statistics
-    cout << endl << "The game has ended!" << endl;
-    cout << player1 << " won " << p1_wins << " rounds." << endl;
-    cout << player2 << " won " << p2_wins << " rounds." << endl;
+    cout << endl << "The game has ended!" << endl << "------------------" << endl << "Final Stats:" << endl;
+    cout << player1 << " won " << p1_wins << " rounds and lost " << p2_wins << " rounds." << endl;
+    cout << player2 << " won " << p2_wins << " rounds and lost " << p1_wins << " rounds." << endl;
     cout << "There were " << ties << " ties." << endl;
 
     return 0;
